@@ -24,7 +24,8 @@ export function ToDoItem({ a, id, name, count }) {
 
         <button
           className={styles.deleteItem}
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             const confirm = window.confirm("DO YOU REALLY WANT TO DELETE?");
             if (confirm === true) {
               dispatch(deleteProduct({ id: id }));
