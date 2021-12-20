@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value {
+  font-size: 78px;
+  padding: 0 16px;
+  margin: 2px;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(200, 215, 205);
+}
+
+.button,
+.asyncButton {
+  font-size: 32px;
+  padding: 2px 12px;
+  outline: none;
+  border: 2px solid transparent;
+  color: rgb(200, 215, 205);
+  cursor: pointer;
+  background-color: rgba(24, 96, 192, 0.2);
+  transition: all 0.15s;
+  margin: 0 0.8rem;
+}
+
+.textbox {
+  font-size: 32px;
+  padding: 2px;
+  width: 64px;
+  text-align: center;
+}
+
+.button:hover,
+.asyncButton:hover {
+  cursor: pointer;
+  border: 2px solid rgba(112, 76, 182, 0.4);
+}
