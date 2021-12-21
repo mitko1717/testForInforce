@@ -25,7 +25,9 @@ export const productsSlice = createSlice({
     fetchProducts: (state) => {
       state.fetchProductsAbility = !state.fetchProductsAbility;
       const productsList = productsAPI.allProducts();
-      state.products = state.products.concat(productsList);
+      state.products = state.products.concat(productsList)
+      .sort((a, b) => a.name.localeCompare(b.name))
+        .sort((a, b) => a.count - b.count);
       // console.log(state.products);
     },
     addProduct: (state, action /*PayloadAction<IProduct>*/) => {
@@ -40,6 +42,9 @@ export const productsSlice = createSlice({
         },
       };
       state.products.push(product);
+            state.products = state.products
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .sort((a, b) => a.count - b.count);
     },
     deleteProduct: (state, action) => {
       state.products = state.products.filter(
